@@ -1,0 +1,29 @@
+.about {
+  margin-top: 105px;
+}
+
+/* .about h2 {
+  font-weight: 600;
+  pointer-events: none;
+  text-align: center;
+  font-size: 100px;
+} */
+
+.about h2 {
+  font-weight: 600;
+  pointer-events: none;
+}
+
+.about i {
+  margin-top: 1rem;
+  background: var(--secondary-color);
+  height: 10px;
+  width: 50px;
+  display: block;
+  border-radius: 5px;
+  transition: all 0.5s ease-out;
+}
+
+.about:hover > i {
+  width: 170px;
+}

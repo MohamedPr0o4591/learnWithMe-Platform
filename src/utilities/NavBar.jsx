@@ -12,6 +12,7 @@ import {
 import { Link } from "react-router-dom";
 import Registration from "./../components/pages/auth/Registration";
 import Login from "../components/pages/auth/Login";
+import logo from "../../public/logo.png";
 
 function NavBar() {
   const [open, setOpen] = useState(false);
@@ -47,8 +48,9 @@ function NavBar() {
           </ul>
           <Box flex={1} />
 
-          <Link to={"/"}>
+          <Link to={"/"} className="logo">
             <h3>learn with me</h3>
+            <img src={logo} alt="Logo" />
           </Link>
         </Stack>
       </Container>

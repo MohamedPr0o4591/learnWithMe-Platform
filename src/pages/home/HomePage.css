@@ -1,6 +1,14 @@
 .homePage {
   overflow-x: hidden;
-  height: 300vh;
+  height: 100vh;
+  background: url(../../assets/home-cover.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all 1.5s ease;
+}
+
+.homePage .container {
+  color: #efef;
 }
 
 .homePage section.header {
@@ -61,4 +69,125 @@
   user-select: none;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   transition: all 0.228s ease;
+}
+
+.homePage section.header .content {
+  position: absolute;
+  color: #efef;
+  bottom: 0;
+  left: 0;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: all 0.228s ease;
+  backdrop-filter: grayscale(0.6) contrast(0.95)
+    drop-shadow(2px 4px 100px black);
+  width: 100%;
+  overflow: hidden;
+  animation: move 0.5s ease-in-out forwards 0.5s;
+}
+
+@keyframes move {
+  from {
+    padding: 0;
+    height: 0;
+  }
+  to {
+    padding: 20px;
+    height: 45%;
+  }
+}
+
+.homePage section.header .content strong {
+  padding-right: 20px;
+  font-weight: 700;
+  color: #1976d2;
+}
+
+.homePage .header .content .box {
+  position: absolute;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.homePage .header .content .logo-container {
+  align-items: center;
+  padding-right: 20px;
+}
+
+.homePage .header .content .logo-container img {
+  width: 70px;
+  transform: translateY(-2px);
+  user-select: none;
+  pointer-events: none;
+}
+
+.homePage section.header .content h3 {
+  text-transform: capitalize;
+  letter-spacing: 0.1rem;
+  font-size: 40px;
+  user-select: none;
+  font-weight: 700;
+}
+
+.homePage section.header .content p {
+  margin: 0;
+  font-size: 20px;
+  line-height: 2.2rem;
+  font-weight: 300;
+  user-select: none;
+  padding-right: 20px;
+  max-inline-size: 600px;
+}
+
+.homePage section.header .content ul {
+  margin-right: 30px;
+}
+
+.homePage section.header .content .btn {
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  padding: 10px 30px;
+  transition: all 0.228s ease;
+  border: none;
+}
+
+.homePage section.header .content .btn::before {
+  content: "";
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 2px;
+  transition: all 0.228s ease;
+  transform: skew(20deg, -20deg);
+}
+.homePage section.header .content .btn::after {
+  content: "";
+  background: transparent;
+  border: 1px solid #1976d2;
+
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 2px;
+  transition: all 0.228s ease;
+  transform: skew(-20deg, 20deg);
+}
+
+.homePage section.header .content .btn:hover {
+  border: initial;
+}
+
+.homePage section.header .content .btn:hover::before,
+.homePage section.header .content .btn:hover::after {
+  transform: skew(0deg, 0deg);
+  background: rgba(255, 255, 255, 0.3);
 }
