@@ -113,6 +113,9 @@
 .homePage .header .content .logo-container {
   align-items: center;
   padding-right: 20px;
+  max-inline-size: 600px;
+  justify-content: end;
+  float: left;
 }
 
 .homePage .header .content .logo-container img {

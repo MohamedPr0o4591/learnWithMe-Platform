@@ -36,9 +36,13 @@ function HomePage() {
 
   useEffect(() => {
     const nav = document.querySelector(".nav");
+    const homePage = document.querySelector(".homePage");
 
     if (localStorage.tutorial) {
       nav.classList.add("sticky");
+      homePage.style.background = `linear-gradient(to bottom, #000000 0%, hwb(0 0% 100% / 0.1) 100%),
+      url(${cover}) no-repeat`;
+      homePage.style.backgroundSize = "cover";
     }
   }, []);
 
