@@ -1,0 +1,65 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 30px;
+  transition: all 0.5s ease;
+  color: #fff;
+}
+
+.nav.sticky {
+  background: rgba(0, 0, 0);
+  padding: 15px;
+}
+
+.nav h3 {
+  text-transform: capitalize;
+  letter-spacing: 0.1rem;
+  user-select: none;
+  font-family: "Noto Serif JP", serif;
+  font-weight: 700;
+  color: #fff;
+}
+.nav a {
+  text-decoration: none;
+  color: #9c9c9c;
+  font-weight: 700;
+  transition: all 0.228s ease;
+}
+
+.nav a:hover {
+  color: #fff;
+}
+
+.nav .btn {
+  position: relative;
+  transition: all 0.228s ease;
+  font-size: 15px;
+}
+
+.nav .btn::before {
+  content: "";
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 2px;
+  transition: all 0.228s ease;
+  transform: skew(20deg, -20deg);
+}
+
+.nav .btn:hover::before {
+  background: rgba(255, 255, 255, 0.5);
+  transform: skew(0deg, 0deg);
+}
+
+.nav ul {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 20px;
+}

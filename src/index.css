@@ -1,0 +1,87 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --main-color: #004d99;
+  --main-color-light: #eef5ff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Almarai", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: #f5f5f5;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #999;
+  }
+}
+
+body {
+  min-height: 100vh;
+  min-width: 320px;
+  background: #fff;
+  color: #000;
+  direction: rtl;
+}
+
+section {
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* .blurBall {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  pointer-events: none;
+  user-select: none;
+}
+
+.blurBall::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #e00;
+  animation: blurBall 5s linear infinite alternate;
+}
+
+@keyframes blurBall {
+  0% {
+    filter: blur(200px);
+  }
+  100% {
+    filter: blur(285px);
+  }
+} */

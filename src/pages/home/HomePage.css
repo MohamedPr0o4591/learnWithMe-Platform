@@ -1,0 +1,64 @@
+.homePage {
+  overflow-x: hidden;
+  height: 300vh;
+}
+
+.homePage section.header {
+  background: url(../../assets/bgHeader.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  filter: saturate(130%) contrast(110%);
+  width: 100%;
+  height: 100vh;
+  transition: all 0.228s ease;
+  position: fixed; /* اجعل العنصر ثابتًا لتأثير التكبير */
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.homePage section.header h2 {
+  position: absolute;
+  top: 35%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  font-size: 80px;
+  font-weight: 700;
+  color: #efef;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  user-select: none;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: all 0.228s ease;
+}
+
+.homePage section.header h2:nth-child(2) {
+  position: absolute;
+  top: 45%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  font-size: 80px;
+  font-weight: 700;
+  color: #efef;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  user-select: none;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: all 0.228s ease;
+}
+
+.homePage section.header h2:nth-child(3) {
+  position: absolute;
+  top: 52%;
+  left: 37%;
+  transform: translate(-50%, -50%);
+  font-size: 80px;
+  font-weight: 700;
+  color: #efef;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  user-select: none;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: all 0.228s ease;
+}
