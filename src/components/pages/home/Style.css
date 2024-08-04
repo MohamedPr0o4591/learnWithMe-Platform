@@ -42,6 +42,14 @@
   color: #efefef;
 }
 
+.about i {
+  height: 8px;
+  width: 40px;
+  background: var(--secondary-color);
+  margin: 1rem auto;
+  transition: all 0.3s ease-out;
+}
+
 @keyframes showSwiper {
   from {
     opacity: 0;
@@ -58,6 +66,10 @@
   height: 80vh;
   opacity: 0;
   animation: showSwiper 0.5s ease-in-out 1s forwards;
+}
+
+.swiper:hover i {
+  width: 600px;
 }
 
 .swiper-slide {
