@@ -1,13 +1,14 @@
 .homePage {
   overflow-x: hidden;
-  height: 100vh;
-  background: url(../../assets/home-cover.jpg);
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #000000 0%, hwb(0 0% 100% / 0.01) 100%),
+    url(../../assets/home-cover.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   transition: all 1.5s ease;
 }
 
-.homePage .container {
+.homePage .home-container {
   color: #efef;
 }
 
@@ -92,7 +93,7 @@
   }
   to {
     padding: 20px;
-    height: 45%;
+    height: 45vh;
   }
 }
 
@@ -114,8 +115,6 @@
   align-items: center;
   padding-right: 20px;
   max-inline-size: 600px;
-  justify-content: end;
-  float: left;
 }
 
 .homePage .header .content .logo-container img {
@@ -140,7 +139,6 @@
   font-weight: 300;
   user-select: none;
   padding-right: 20px;
-  max-inline-size: 600px;
 }
 
 .homePage section.header .content ul {

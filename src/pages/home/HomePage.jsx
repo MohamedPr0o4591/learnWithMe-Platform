@@ -1,12 +1,5 @@
 import { Box, Button, Container, Stack } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import mohamedNasrImg from "../../assets/img1.png";
-import Card from "../../components/Card";
-import mohamedNasrCover from "../../assets/img2.jpg";
-import tasniemImg from "../../assets/img3.png";
-import tasniemCover from "../../assets/img4.jpg";
-import shrouqImg from "../../assets/img6.png";
-import shrouqCover from "../../assets/img5.jpg";
 import "./HomePage.css";
 import logo from "../../../public/logo.png";
 import cover from "../../assets/home-cover.jpg";
@@ -29,8 +22,9 @@ function HomePage() {
       header.style.opacity = "0";
       header.style.pointerEvents = "none";
       nav.classList.add("sticky");
-      homePage.style.background = `linear-gradient(to bottom, #000000 0%, hwb(0 0% 100% / 0.1) 100%),
-    url(${cover}) no-repeat`;
+      //   homePage.style.background = `linear-gradient(to bottom, #000000 0%, hwb(0 0% 100% / 0.01) 100%),
+      // url(${cover}) no-repeat`;
+      homePage.style.background = `url(${cover}) no-repeat`;
       homePage.style.backgroundSize = "cover";
 
       localStorage.tutorial = true;
@@ -47,10 +41,31 @@ function HomePage() {
 
     if (localStorage.tutorial) {
       nav.classList.add("sticky");
-      homePage.style.background = `linear-gradient(to bottom, #000000 0%, hwb(0 0% 100% / 0.1) 100%),
-      url(${cover}) no-repeat`;
+      // homePage.style.background = `linear-gradient(to bottom, #000000 0%, hwb(0 0% 100% / 0.1) 100%),
+      // url(${cover}) no-repeat`;
+      homePage.style.background = `url(${cover}) no-repeat`;
+
       homePage.style.backgroundSize = "cover";
     }
+  }, []);
+
+  useEffect(() => {
+    function handleScroll() {
+      const scrollY = window.scrollY;
+      const nav = document.querySelector(".nav");
+
+      if (scrollY > 0) {
+        nav.classList.add("hidden");
+      } else {
+        nav.classList.remove("hidden");
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll);
+
+    return (_) => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   // useEffect(() => {
@@ -146,11 +161,11 @@ function HomePage() {
           </div>
         </section>
       ) : (
-        <Container maxWidth={"xl"} className="container">
+        <div className="home-container">
           {/* about us */}
 
           <AboutUs />
-        </Container>
+        </div>
       )}
     </div>
   );

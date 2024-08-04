@@ -11,8 +11,14 @@
 
 .nav.sticky {
   opacity: 1;
-  padding: 30px;
+  padding: 40px;
   pointer-events: auto;
+  backdrop-filter: blur(10px) brightness(0.7);
+}
+
+.nav.hidden {
+  padding: 20px;
+  backdrop-filter: brightness(0.3) blur(8px);
 }
 
 .nav h3 {
@@ -75,4 +81,5 @@
   align-items: center;
   list-style: none;
   gap: 20px;
+  padding: 0;
 }

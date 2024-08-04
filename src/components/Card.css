@@ -42,21 +42,24 @@
 .card-component .content-box {
   position: absolute;
   bottom: 0;
-  color: #efef;
   border-radius: 10px;
   width: 100%;
   padding: 10px;
   color: #000;
   z-index: -1;
   overflow: hidden;
+  transition: all 0.5s ease;
+  opacity: 0;
 }
 .card-component:hover .content-box {
-  height: 50%;
+  height: 52%;
   top: 50%;
   bottom: initial;
   transition: all 0.6s ease-in-out;
   transform: translateY(100%);
   z-index: 1;
+  background: #efef;
+  opacity: 1;
 }
 
 .card-component .content-box h4 {
@@ -75,9 +78,8 @@
   justify-content: center;
 }
 
-.card-component .content-box ul li p {
-  margin: 0;
-  font-weight: 600;
+.card-component .content-box ul li strong {
+  color: #000;
 }
 
 .card-component ol {

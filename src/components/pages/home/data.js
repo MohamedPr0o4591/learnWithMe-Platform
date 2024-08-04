@@ -1,18 +1,21 @@
 export const aboutPlatform = [
   {
     title: "فكرة المنصة",
-    content: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam id
-            exercitationem soluta dolorem, consectetur doloribus officia illo?
-            Magnam, non beatae quae eligendi exercitationem veniam repellat,
-            quas, nihil consequuntur blanditiis aperiam. Aut hic ab aliquam,
-            vero rem nam ad. Veniam, excepturi.`,
+    content: `
+فى منصة Learn With Me، نؤمن بأن التعلم هو المفتاح لتحقيق إمكانيات كل طالب. تم تصميم منصتنا لتلبية احتياجات الطلاب في جميع المراحل التعليمية، من الابتدائي والإعدادي والثانوي إلى الجامعي، بالإضافة إلى ذوي الاحتياجات الخاصة. هدفنا هو خلق بيئة تعليمية تحفز على حب التعلم وتسهله من خلال تقنيات التعليم الحديثة.
+`,
+    id: "platform",
   },
+
   {
-    title: "اشمعنا تعلم معي وماذا ستقدم لك من مزايا ؟",
-    content: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam id
-            exercitationem soluta dolorem, consectetur doloribus officia illo?
-            Magnam, non beatae quae eligendi exercitationem veniam repellat,
-            quas, nihil consequuntur blanditiis aperiam. Aut hic ab aliquam,
-            vero rem nam ad. Veniam, excepturi.`,
+    title: "المدرسين",
+    content: "",
+    id: "teachers",
+  },
+
+  {
+    title: "مزايا Learn With Me",
+    content: `في منصه Learn With Me، نؤمن بأن التعلم هو المفتاح لتحقيق إمكانيات كل طالب. تم تصميم منصتنا لتلبية احتياجات الطلاب في جميع المراحل التعليمية، من الابتدائي والإعدادي والثانوي إلى الجامعي، بالإضافة إلى ذوي الاحتياجات الخاصة. هدفنا هو خلق بيئة تعليمية تحفز على حب التعلم وتسهله من خلال تقنيات التعليم الحديثة.`,
+    id: "features",
   },
 ];

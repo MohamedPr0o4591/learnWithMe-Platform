@@ -19,7 +19,7 @@ function Card(props) {
             </li>
 
             <li>
-              <p>{props.p}</p>
+              <strong>{props.p}</strong>
             </li>
 
             <li>

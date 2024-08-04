@@ -21,7 +21,11 @@ function NavBar() {
   return (
     <div className="nav">
       <Container maxWidth={"xl"}>
-        <Stack direction={"row"} alignItems={"center"}>
+        <Stack
+          direction={"row"}
+          alignItems={"center"}
+          justifyContent={"space-between"}
+        >
           <Stack direction={"row"} gap={2}>
             <Button
               variant="outlined"
@@ -31,22 +35,24 @@ function NavBar() {
               Start now
             </Button>
           </Stack>
-          <Box flex={1} />
 
           <ul>
             <li>
-              <Link to={"/"}> المدرسين</Link>{" "}
+              <Link to={"#platform"}>فكرة المنصة</Link>{" "}
             </li>
 
             <li>
-              <Link to={"/"}>فكرة المنصة</Link>{" "}
+              <Link to={"#teachers"}>المدرسين</Link>{" "}
+            </li>
+
+            <li>
+              <Link to={"#features"}>مزايا المنصة</Link>{" "}
             </li>
 
             <li>
               <Link to={"/"}>تواصل معنا</Link>{" "}
             </li>
           </ul>
-          <Box flex={1} />
 
           <Link to={"/"} className="logo">
             <h3>learn with me</h3>
