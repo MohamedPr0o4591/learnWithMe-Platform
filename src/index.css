@@ -57,6 +57,12 @@ section {
   width: 100%;
 }
 
+.almarai-bold {
+  font-family: "Almarai", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
 /* .blurBall {
   position: fixed;
   top: 50%;

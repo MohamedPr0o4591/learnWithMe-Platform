@@ -32,7 +32,7 @@ function NavBar() {
               className="btn"
               onClick={() => setOpen(true)}
             >
-              Start now
+              <span className="almarai-bold">إبدأ رحلتك الأن</span>
             </Button>
           </Stack>
 
