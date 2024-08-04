@@ -1,5 +1,5 @@
 .about {
-  margin-top: 105px;
+  padding-top: 105px;
 }
 
 /* .about h2 {
@@ -9,7 +9,7 @@
   font-size: 100px;
 } */
 
-.about h2 {
+.about h3 {
   font-weight: 600;
   pointer-events: none;
 }
@@ -26,4 +26,63 @@
 
 .about:hover > i {
   width: 170px;
+}
+
+.about h2 {
+  margin-top: 2rem;
+  font-size: 100px;
+  color: var(--secondary-color);
+  font-weight: 700;
+}
+
+.about p {
+  margin-top: 2rem;
+  font-size: 25px;
+  font-weight: 400;
+  color: #efefef;
+}
+
+@keyframes showSwiper {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.swiper {
+  margin-top: 2rem;
+  width: 100%;
+  height: 80vh;
+  opacity: 0;
+  animation: showSwiper 0.5s ease-in-out 1s forwards;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #000;
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-pagination-bullet {
+  transition: all 0.228s;
+  opacity: 0;
+}
+
+.swiper-pagination-bullet-active {
+  height: 40px;
+  border-radius: 10px;
+  background: var(--secondary-color);
 }

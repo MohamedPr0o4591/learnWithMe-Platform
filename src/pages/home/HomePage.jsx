@@ -14,6 +14,9 @@ import AboutUs from "../../components/pages/home/AboutUs";
 
 function HomePage() {
   const [nextBtn, setNextBtn] = useState("1");
+  const [finishedTutorial, setFinishedTutorial] = useState(
+    localStorage.tutorial
+  );
 
   useEffect(() => {
     const header = document.querySelector(".header");
@@ -31,6 +34,7 @@ function HomePage() {
       homePage.style.backgroundSize = "cover";
 
       localStorage.tutorial = true;
+      setFinishedTutorial(true);
     }
   }, [nextBtn]);
 
@@ -79,7 +83,7 @@ function HomePage() {
     <div className="homePage">
       {/* header component */}
 
-      {!localStorage.tutorial && (
+      {!finishedTutorial ? (
         <section className="header">
           <h2>Learning</h2>
           <h2>with</h2>
@@ -138,13 +142,13 @@ function HomePage() {
             </div>
           </div>
         </section>
+      ) : (
+        <Container maxWidth={"xl"} className="container">
+          {/* about us */}
+
+          <AboutUs />
+        </Container>
       )}
-
-      <Container maxWidth={"xl"} className="container">
-        {/* about us */}
-
-        <AboutUs />
-      </Container>
     </div>
   );
 }
