@@ -34,7 +34,10 @@ function HomePage() {
       homePage.style.backgroundSize = "cover";
 
       localStorage.tutorial = true;
-      setFinishedTutorial(true);
+
+      setTimeout(() => {
+        setFinishedTutorial(true);
+      }, 1500);
     }
   }, [nextBtn]);
 
