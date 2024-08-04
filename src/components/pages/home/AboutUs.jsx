@@ -32,7 +32,7 @@ function AboutUs() {
       >
         {aboutPlatform.map((item, index) => {
           return (
-            <SwiperSlide>
+            <SwiperSlide key={index}>
               <h2>{item.title}</h2>
 
               <i />
