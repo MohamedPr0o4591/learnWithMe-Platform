@@ -193,3 +193,20 @@
   transform: skew(0deg, 0deg);
   background: rgba(255, 255, 255, 0.3);
 }
+
+@media (min-width: 1200px) and (max-width: 1600px) {
+  .homePage section.header h2,
+  .homePage section.header h2:nth-child(2),
+  .homePage section.header h2:nth-child(3) {
+    font-size: 60px;
+  }
+
+  .homePage section.header h2:nth-child(3) {
+    top: 55%;
+  }
+
+  .homePage section.header .content p {
+    font-size: 18px;
+    line-height: inherit;
+  }
+}

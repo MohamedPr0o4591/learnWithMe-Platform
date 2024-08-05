@@ -51,6 +51,10 @@ function AboutUs() {
                   onSwiper={setSwiperRef}
                   slidesPerView={4}
                   centeredSlides={false}
+                  autoplay={{
+                    delay: 500,
+                    disableOnInteraction: true,
+                  }}
                   spaceBetween={20}
                   navigation={true}
                   modules={[Pagination, Navigation]}
