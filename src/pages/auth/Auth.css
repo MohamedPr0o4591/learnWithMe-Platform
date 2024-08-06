@@ -177,9 +177,10 @@
   border: none;
   outline: none;
   border-radius: 5px;
-  background: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   font-size: 1rem;
+  background: #fff;
+  color: inherit;
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
