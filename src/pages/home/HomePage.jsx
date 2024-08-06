@@ -15,6 +15,7 @@ function HomePage() {
     const header = document.querySelector(".header");
     const homePage = document.querySelector(".homePage");
     const nav = document.querySelector(".nav");
+    const imgCover = document.querySelector(".imgCover");
 
     if (nextBtn == 3) {
       header.style.transition = "all 1.5s ease";
@@ -24,8 +25,16 @@ function HomePage() {
       nav.classList.add("sticky");
       //   homePage.style.background = `linear-gradient(to bottom, #000000 0%, hwb(0 0% 100% / 0.01) 100%),
       // url(${cover}) no-repeat`;
-      homePage.style.background = `url(${cover}) no-repeat`;
-      homePage.style.backgroundSize = "cover";
+      // homePage.style.background = `url(${cover}) no-repeat`;
+      // homePage.style.backgroundSize = "cover";
+      homePage.style.background = "#000";
+      imgCover.style.background = `url(${cover}) no-repeat`;
+      imgCover.style.backgroundSize = "cover";
+      imgCover.style.backgroundPosition = "center center";
+      imgCover.style.backgroundAttachment = "fixed";
+      imgCover.style.position = "absolute";
+      imgCover.style.width = "100%";
+      imgCover.style.height = "100%";
 
       localStorage.tutorial = true;
 
@@ -38,12 +47,21 @@ function HomePage() {
   useEffect(() => {
     const nav = document.querySelector(".nav");
     const homePage = document.querySelector(".homePage");
+    const imgCover = document.querySelector(".imgCover");
 
     if (localStorage.tutorial) {
       nav.classList.add("sticky");
       // homePage.style.background = `linear-gradient(to bottom, #000000 0%, hwb(0 0% 100% / 0.1) 100%),
       // url(${cover}) no-repeat`;
-      homePage.style.background = `url(${cover}) no-repeat`;
+      // homePage.style.background = `url(${cover}) no-repeat`;
+      homePage.style.background = "#000";
+      imgCover.style.background = `url(${cover}) no-repeat`;
+      imgCover.style.backgroundSize = "cover";
+      imgCover.style.backgroundPosition = "center center";
+      imgCover.style.backgroundAttachment = "fixed";
+      imgCover.style.position = "absolute";
+      imgCover.style.width = "100%";
+      imgCover.style.height = "100%";
 
       homePage.style.backgroundSize = "cover";
     }
@@ -99,6 +117,7 @@ function HomePage() {
 
   return (
     <div className="homePage">
+      <div className="imgCover" />
       {/* header component */}
 
       {!finishedTutorial ? (
