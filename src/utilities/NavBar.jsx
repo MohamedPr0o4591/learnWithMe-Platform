@@ -5,6 +5,7 @@ import {
   Box,
   Button,
   Container,
+  IconButton,
   Modal,
   Stack,
   Typography,
@@ -13,18 +14,21 @@ import { Link } from "react-router-dom";
 import Registration from "./../components/pages/auth/Registration";
 import Login from "../components/pages/auth/Login";
 import logo from "../../public/logo.png";
+import { CloseOutlined, MenuOutlined } from "@mui/icons-material";
 
 function NavBar() {
   const [open, setOpen] = useState(false);
+  const [slide, setSlide] = useState(false);
   const [registerMode, setRegisterMode] = useState("sign up");
 
   return (
     <div className="nav">
-      <Container maxWidth={"xl"}>
+      <Container maxWidth={"xl"} className="main-container">
         <Stack
           direction={"row"}
           alignItems={"center"}
           justifyContent={"space-between"}
+          className="inner-main-container"
         >
           <Stack direction={"row"} gap={2}>
             <Button
@@ -38,19 +42,19 @@ function NavBar() {
 
           <ul>
             <li>
-              <Link to={"#platform"}>فكرة المنصة</Link>{" "}
+              <a href="#platform">فكرة المنصة</a>
             </li>
 
             <li>
-              <Link to={"#teachers"}>المدرسين</Link>{" "}
+              <a href="#teachers">المدرسين</a>
             </li>
 
             <li>
-              <Link to={"#features"}>مزايا المنصة</Link>{" "}
+              <a href="#features">مزايا المنصة</a>
             </li>
 
             <li>
-              <Link to={"/"}>تواصل معنا</Link>{" "}
+              <a href="#contact">تواصل معنا</a>
             </li>
           </ul>
 
@@ -60,6 +64,59 @@ function NavBar() {
           </Link>
         </Stack>
       </Container>
+
+      {/* mobile screens */}
+
+      <Stack
+        direction={"row"}
+        alignItems={"center"}
+        justifyContent={"space-between"}
+        className="inner-main-container-2"
+      >
+        <IconButton color="inherit" onClick={(_) => setSlide(!slide)}>
+          {slide ? (
+            <CloseOutlined className="icon" />
+          ) : (
+            <MenuOutlined className="icon" />
+          )}
+        </IconButton>
+
+        <Link to={"/"} className="logo">
+          <h3>learn with me</h3>
+          <img src={logo} alt="Logo" />
+        </Link>
+      </Stack>
+
+      {/* slide left menu */}
+
+      <Box className={`slide-menu ${slide ? "slide-menu-active" : ""}`}>
+        <Button
+          variant="contained"
+          className="btn"
+          onClick={() => setOpen(true)}
+        >
+          <span className="almarai-bold">إبدأ رحلتك الأن</span>
+        </Button>
+        <ul>
+          <li onClick={(_) => setSlide(false)}>
+            <a href="#platform">فكرة المنصة</a>
+          </li>
+
+          <li onClick={(_) => setSlide(false)}>
+            <a href="#teachers">المدرسين</a>
+          </li>
+
+          <li onClick={(_) => setSlide(false)}>
+            <a href="#features">مزايا المنصة</a>
+          </li>
+
+          <li onClick={(_) => setSlide(false)}>
+            <a href="#contact">تواصل معنا</a>
+          </li>
+        </ul>
+      </Box>
+
+      {/* modal */}
 
       <Modal
         open={open}

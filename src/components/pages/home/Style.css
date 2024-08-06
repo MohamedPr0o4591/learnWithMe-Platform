@@ -131,7 +131,7 @@
   background: #efe6;
 }
 
-@media (min-width: 1200px) and (max-width: 1600px) {
+/* @media (min-width: 1200px) and (max-width: 1600px) {
   .swiper {
     width: 100%;
     height: 390px;
@@ -144,5 +144,25 @@
 
   .about p {
     font-size: 20px;
+  }
+} */
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .about {
+    padding-top: 65.22px;
+  }
+
+  .about h2 {
+    font-size: 45px;
+  }
+
+  .about .content:hover i {
+    width: 245px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  .about h2 {
+    font-size: 75px;
   }
 }

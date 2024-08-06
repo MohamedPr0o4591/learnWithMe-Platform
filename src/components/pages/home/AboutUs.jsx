@@ -49,7 +49,17 @@ function AboutUs() {
               {item.id === "teachers" && (
                 <Swiper
                   onSwiper={setSwiperRef}
-                  slidesPerView={4}
+                  breakpoints={{
+                    320: {
+                      slidesPerView: 1,
+                    },
+                    768: {
+                      slidesPerView: 3,
+                    },
+                    1200: {
+                      slidesPerView: 4,
+                    },
+                  }}
                   centeredSlides={false}
                   autoplay={{
                     delay: 500,

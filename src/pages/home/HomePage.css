@@ -83,7 +83,7 @@
     drop-shadow(2px 4px 100px black);
   width: 100%;
   overflow: hidden;
-  animation: move 0.5s ease-in-out forwards 0.5s;
+  animation: move 0.5s ease-in-out forwards 1s;
 }
 
 @keyframes move {
@@ -146,6 +146,8 @@
 }
 
 .homePage section.header .content .btn {
+  position: relative;
+  display: inline-block;
   font-size: 15px;
   font-weight: 700;
   text-transform: uppercase;
@@ -154,6 +156,7 @@
   transition: all 0.228s ease;
   border: none;
   color: #efef;
+  margin: 0px 2rem;
 }
 
 .homePage section.header .content .btn::before {
@@ -194,7 +197,7 @@
   background: rgba(255, 255, 255, 0.3);
 }
 
-@media (min-width: 1200px) and (max-width: 1600px) {
+/* @media (min-width: 1200px) and (max-width: 1600px) {
   .homePage section.header h2,
   .homePage section.header h2:nth-child(2),
   .homePage section.header h2:nth-child(3) {
@@ -208,5 +211,51 @@
   .homePage section.header .content p {
     font-size: 18px;
     line-height: inherit;
+  }
+} */
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .homePage section.header .content {
+    overflow: auto;
+  }
+
+  .homePage section.header h2 {
+    display: none;
+  }
+
+  @keyframes move {
+    from {
+      padding: 0;
+      height: 0;
+    }
+    to {
+      padding: 20px;
+      height: 100vh;
+    }
+  }
+
+  .homePage .header .content .logo-container {
+    margin-bottom: 2rem;
+    justify-content: end;
+  }
+
+  .homePage section.header .content h3 {
+    font-size: 30px;
+  }
+
+  .homePage section.header .content p {
+    font-size: 18px;
+    line-height: inherit;
+  }
+
+  .homePage section.header .content .btn {
+    margin: 0 2rem;
+  }
+
+  .homePage section.header .btn-container {
+    margin-top: 0;
+    padding-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
 }

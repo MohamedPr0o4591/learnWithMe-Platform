@@ -142,7 +142,12 @@ function HomePage() {
                 </ul>
               ) : null}
 
-              <Stack direction={"row"} mt={2} alignItems={"center"}>
+              <Stack
+                direction={"row"}
+                mt={2}
+                alignItems={"center"}
+                className="btn-container"
+              >
                 {nextBtn === "2" && (
                   <strong>ابدأ رحلتك التعليمية معنا اليوم!</strong>
                 )}

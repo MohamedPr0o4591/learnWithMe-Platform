@@ -18,9 +18,11 @@
   position: relative;
   width: 550px;
   min-height: 400px;
+  max-height: 750px;
   border-radius: 10px;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  overflow: auto;
 }
 
 .auth form #registration {
@@ -178,4 +180,29 @@
   background: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   font-size: 1rem;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .auth form .login-component {
+    width: 100%;
+    padding: 10px 20px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 1200px) {
+  .auth .register-row {
+    overflow: auto;
+
+    height: 100vh;
+    gap: 10px;
+  }
+
+  .auth form .register-col {
+    left: 0;
+    transform: translate(0, 0);
+  }
+
+  .auth form .register-component {
+    padding: 10px 20px;
+  }
 }

@@ -60,7 +60,7 @@ function Registration(props) {
   return (
     <form action="" onSubmit={handleSubmit}>
       <Container>
-        <Row>
+        <Row className="register-row">
           <Col
             sx={12}
             lg={6}
