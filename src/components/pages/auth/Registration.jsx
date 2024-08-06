@@ -132,7 +132,7 @@ function Registration(props) {
                 />
               </div>
               <span className="d-block mt-2">
-                <Info color="primary" fontSize="1rem" /> من بداية 7 سنوان
+                <Info color="primary" fontSize="1rem" /> من بداية 7 سنوات
               </span>
               <div className="input-box">
                 <div className="label">
