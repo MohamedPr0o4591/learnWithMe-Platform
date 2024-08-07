@@ -1,0 +1,83 @@
+.contact-component {
+  position: relative;
+  min-height: 100vh;
+  backdrop-filter: blur(10px) brightness(0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-component form {
+  display: flex;
+  flex-direction: column;
+  background: #7d5200;
+  width: 450px;
+  height: 550px;
+  padding: 40px 50px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.contact-component form h3 {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.contact-component form label {
+  color: #efef;
+}
+
+.contact-component form label.required::after {
+  content: "*";
+  color: #ff0000;
+  margin-right: 3px;
+  font-size: 1.2rem;
+}
+
+.contact-component form input {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin: 10px 0;
+  background-color: #99743b;
+  color: #efef;
+}
+
+.contact-component form input.input-ltr {
+  direction: ltr;
+}
+
+.contact-component form textarea {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin: 10px 0;
+  background-color: #99743b;
+  color: #efef;
+  resize: none;
+  width: 100%;
+  height: 100%;
+}
+
+.contact-component form input[type="submit"] {
+  background-color: #efef;
+  color: #7d5200;
+  font-weight: 700;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 3rem;
+}
+
+.contact-component form input[type="submit"]:hover {
+  background-color: #7d5200;
+  color: #efef;
+}

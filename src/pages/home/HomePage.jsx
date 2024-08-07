@@ -4,6 +4,7 @@ import "./HomePage.css";
 import logo from "../../../public/logo.png";
 import cover from "../../assets/home-cover.jpg";
 import AboutUs from "../../components/pages/home/AboutUs";
+import ContactComponent from "../../components/pages/home/contact/ContactComponent";
 
 function HomePage() {
   const [nextBtn, setNextBtn] = useState("1");
@@ -189,6 +190,8 @@ function HomePage() {
           {/* about us */}
 
           <AboutUs />
+
+          <ContactComponent />
         </div>
       )}
     </div>
