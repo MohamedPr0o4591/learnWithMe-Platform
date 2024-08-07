@@ -21,28 +21,6 @@ function Card(props) {
             <li>
               <strong>{props.p}</strong>
             </li>
-
-            <li>
-              <ol>
-                <li>
-                  <a href={props.waLink} target="_blank" id="whatsapp">
-                    <WhatsApp />
-                  </a>
-                </li>
-
-                <li>
-                  <a href={props.fbLink} target="_blank" id="fb">
-                    <Facebook />
-                  </a>
-                </li>
-
-                <li>
-                  <a href={props.tgLink} target="_blank" id="telegram">
-                    <Telegram />
-                  </a>
-                </li>
-              </ol>
-            </li>
           </ul>
         </div>
 

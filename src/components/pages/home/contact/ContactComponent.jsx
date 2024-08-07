@@ -21,7 +21,7 @@ function ContactComponent() {
 
         <div className="input-box">
           <label htmlFor="content" className="required">
-            البريد الالكتروني
+            الرسالة
           </label>
           <textarea id="content" required />
         </div>

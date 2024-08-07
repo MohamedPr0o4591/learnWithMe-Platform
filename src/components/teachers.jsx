@@ -24,9 +24,6 @@ export const teachersData = [
     imgLeft: "-13px",
     imgWidth: "100%",
     cvrPos: "center center",
-    waLink: "https://wa.me/+201009300000",
-    fbLink: "https://wa.me/+201009300000",
-    tgLink: "https://wa.me/+201009300000",
   },
 
   {
@@ -36,10 +33,7 @@ export const teachersData = [
     imgCvr: mohamedMokhtarCvr,
     imgLeft: "-13px",
     imgWidth: "90%",
-    cvrPos: "center center",
-    waLink: "https://wa.me/+201009300000",
-    fbLink: "https://wa.me/+201009300000",
-    tgLink: "https://wa.me/+201009300000",
+    cvrPos: "top",
   },
   {
     name: "Tasniem Mosaad",
@@ -49,9 +43,6 @@ export const teachersData = [
     imgLeft: "-13px",
     imgWidth: "100%",
     cvrPos: "top",
-    waLink: "https://wa.me/+201009300000",
-    fbLink: "https://wa.me/+201009300000",
-    tgLink: "https://wa.me/+201009300000",
   },
   {
     name: "Shrouq Walid",
@@ -61,9 +52,6 @@ export const teachersData = [
     imgLeft: "14px",
     imgWidth: "90%",
     cvrPos: "center center",
-    waLink: "https://wa.me/+201009300000",
-    fbLink: "https://wa.me/+201009300000",
-    tgLink: "https://wa.me/+201009300000",
   },
   {
     name: "Basmala Yasser",
@@ -73,9 +61,6 @@ export const teachersData = [
     imgLeft: "-13px",
     imgWidth: "100%",
     cvrPos: "center center",
-    waLink: "https://wa.me/+201009300000",
-    fbLink: "https://wa.me/+201009300000",
-    tgLink: "https://wa.me/+201009300000",
   },
   {
     name: "Samira Abo-Ziena",
@@ -85,9 +70,6 @@ export const teachersData = [
     imgLeft: "-13px",
     imgWidth: "100%",
     cvrPos: "center center",
-    waLink: "https://wa.me/+201009300000",
-    fbLink: "https://wa.me/+201009300000",
-    tgLink: "https://wa.me/+201009300000",
   },
   {
     name: "Basmala Mahmoud",
@@ -97,9 +79,6 @@ export const teachersData = [
     imgLeft: "13px",
     imgWidth: "90%",
     cvrPos: "center center",
-    waLink: "https://wa.me/+201009300000",
-    fbLink: "https://wa.me/+201009300000",
-    tgLink: "https://wa.me/+201009300000",
   },
   {
     name: "Ahmed Samy",
@@ -109,8 +88,5 @@ export const teachersData = [
     imgLeft: "-10px",
     imgWidth: "100%",
     cvrPos: "top",
-    waLink: "https://wa.me/+201009300000",
-    fbLink: "https://wa.me/+201009300000",
-    tgLink: "https://wa.me/+201009300000",
   },
 ];

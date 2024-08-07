@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router";
 import HomePage from "./pages/home/HomePage";
 import NavBar from "./utilities/NavBar";
+import Footer from "./utilities/footer/Footer";
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
           }
         />
       </Routes>
+
+      <Footer />
     </div>
   );
 }

@@ -1,0 +1,104 @@
+.footer {
+  position: relative;
+  width: 100%;
+  padding: 30px;
+  color: #efef;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.footer ul {
+  margin-top: 20px;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.footer a {
+  background: transparent;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #efef;
+  transition: background 0.5s ease, box-shadow 0.5s ease;
+  border: 1px solid #efef;
+  font-size: 16px;
+}
+
+@keyframes shake {
+  10% {
+    transform: rotate(15deg);
+  }
+
+  20% {
+    transform: rotate(-15deg);
+  }
+
+  30% {
+    transform: rotate(15deg);
+  }
+
+  40% {
+    transform: rotate(-15deg);
+  }
+}
+
+.footer a:hover {
+  animation: shake 0.5s;
+}
+
+.footer a#fb:hover {
+  background: #3b5998;
+  box-shadow: 0 0 10px #3b5998;
+}
+
+.footer a#whatsapp:hover {
+  background: #25d366;
+  box-shadow: 0 0 10px #25d366;
+}
+
+.footer a#insta:hover {
+  background: linear-gradient(to right bottom, #f9ce34, #ee2a7b, #6228d7);
+  box-shadow: 0 0 10px #e1306c;
+}
+
+.footer a#youtube:hover {
+  background: #c4302b;
+  box-shadow: 0 0 10px #c4302b;
+}
+
+.footer a#linkedin:hover {
+  background: #0077b5;
+  box-shadow: 0 0 10px #0077b5;
+}
+
+.footer .footer-row {
+  border-bottom: 1px solid #efef;
+}
+
+.footer p {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.footer strong {
+  position: relative;
+  display: block;
+  text-align: end;
+}
+
+.footer strong::after {
+  content: "New";
+
+  position: absolute;
+  left: 70px;
+  top: -10px;
+  color: #efef;
+  background: #f00;
+  font-size: 12px;
+  padding: 2px 5px;
+  border-radius: 5px;
+}
