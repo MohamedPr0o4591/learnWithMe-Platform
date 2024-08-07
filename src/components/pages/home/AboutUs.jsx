@@ -8,26 +8,20 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "./Style.css";
 
-import { aboutPlatform } from "./data";
 import { Container, Stack } from "@mui/material";
 import Card from "../../Card";
-import mohamedNasr from "../../../assets/img1.png";
-import mohamedNasrCover from "../../../assets/img2.jpg";
 
 // import required modules
 import { Pagination, Navigation } from "swiper/modules";
 import { teachersData } from "../../teachers";
+import { aboutPlatform } from "./data";
+import { Col, Row } from "react-bootstrap";
 
 function AboutUs() {
   const [swiperRef, setSwiperRef] = useState(null);
 
   return (
     <section className="about">
-      {/* <h2>Learn With Me</h2> */}
-      {/* 
-      <h3>فكرة المنصة</h3>
-      <i /> */}
-
       {aboutPlatform.map((item, index) => {
         return (
           <div
@@ -106,7 +100,14 @@ function AboutUs() {
                 // </Stack>
               )}
 
-              <p>{item.content}</p>
+              <Row className="about-content-row">
+                <Col sx={12} lg={6}>
+                  <img src={item.img} alt="" />
+                </Col>
+                <Col sx={12} lg={6}>
+                  <p>{item.content}</p>
+                </Col>
+              </Row>
             </Container>
           </div>
         );

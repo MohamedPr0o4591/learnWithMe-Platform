@@ -19,8 +19,6 @@
 }
 
 .about i {
-  margin-top: 1rem;
-  background: var(--secondary-color);
   height: 10px;
   width: 50px;
   display: block;
@@ -36,17 +34,18 @@
 }
 
 .about p {
-  margin-top: 4rem;
+  /* margin-top: 4rem; */
   font-size: 25px;
   font-weight: 400;
   color: #efefef;
+  line-height: 3;
 }
 
 .about i {
   height: 8px;
   width: 40px;
   background: var(--secondary-color);
-  margin: 1rem auto;
+  margin: 1rem auto 3rem;
   transition: all 0.3s ease-out;
 }
 
@@ -59,6 +58,16 @@
 
 .about .content:hover i {
   width: 600px;
+}
+
+.about .content .about-content-row {
+  flex-wrap: wrap;
+}
+
+.about .content .about-content-row img {
+  width: 100%;
+  object-fit: cover;
+  filter: hue-rotate(175deg) contrast(0.5);
 }
 
 .swiper {
