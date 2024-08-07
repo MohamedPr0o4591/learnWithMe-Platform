@@ -169,6 +169,7 @@ function Registration(props) {
               </div>
               <div className="input-box">
                 <input
+                  className="input-ltr"
                   type="email"
                   required
                   id="email"
@@ -179,6 +180,7 @@ function Registration(props) {
               </div>
               <div className="input-box">
                 <input
+                  className="input-ltr"
                   type="password"
                   required
                   id="password"
@@ -191,6 +193,7 @@ function Registration(props) {
                 <input
                   type="password"
                   required
+                  className="input-ltr"
                   id="confirmPassword"
                   value={confPass}
                   onChange={(e) => setConfPass(e.target.value)}

@@ -14,11 +14,11 @@
 }
 
 .auth form .register-component {
-  padding: 10px 50px;
   position: relative;
   width: 550px;
   min-height: 400px;
-  max-height: 750px;
+  max-height: 95vh;
+  padding: 10px 50px;
   border-radius: 10px;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -102,6 +102,7 @@
   background: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   font-size: 1rem;
+  color: #000;
 }
 
 .auth form .input-box span {
@@ -150,9 +151,11 @@
   accent-color: deeppink;
 }
 
-.auth form input#email,
-.auth form input#password,
-.auth form input#confirmPassword {
+.auth form label {
+  cursor: pointer;
+}
+
+.auth form input.input-ltr {
   direction: ltr;
 }
 

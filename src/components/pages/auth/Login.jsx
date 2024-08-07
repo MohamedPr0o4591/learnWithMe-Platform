@@ -20,12 +20,12 @@ function Login(props) {
         </Stack>
 
         <h2>تسجيل الدخول</h2>
-        <div className="input-box">
-          <input type="email" required />
+        <div className="input-box ">
+          <input type="email" required className="input-ltr" />
           <span>البريد الالكتروني</span>
         </div>
-        <div className="input-box">
-          <input type="password" required />
+        <div className="input-box ">
+          <input type="password" required className="input-ltr" />
           <span>كلمة المرور</span>
         </div>
         <div className="additional-inputs">

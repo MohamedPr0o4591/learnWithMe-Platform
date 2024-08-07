@@ -162,6 +162,10 @@
     top: 125.22px;
   }
 
+  .nav .slide-menu ul {
+    margin-top: 3rem;
+  }
+
   .nav .icon {
     font-size: 3rem;
   }
