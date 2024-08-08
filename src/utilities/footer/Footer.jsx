@@ -2,13 +2,7 @@ import React from "react";
 import "./Footer.css";
 import { Container } from "@mui/material";
 import { Col, Row } from "react-bootstrap";
-import {
-  FacebookRounded,
-  Instagram,
-  LinkedIn,
-  WhatsApp,
-  YouTube,
-} from "@mui/icons-material";
+import { socialMedia } from "./data";
 
 function Footer() {
   return (
@@ -19,35 +13,15 @@ function Footer() {
             <h4>مواقع التواصل الاجتماعى</h4>
 
             <ul>
-              <li>
-                <a href="" id="fb">
-                  <FacebookRounded />
-                </a>
-              </li>
-
-              <li>
-                <a href="" id="whatsapp">
-                  <WhatsApp />
-                </a>
-              </li>
-
-              <li>
-                <a href="" id="insta">
-                  <Instagram />
-                </a>
-              </li>
-
-              <li>
-                <a href="" id="youtube">
-                  <YouTube />
-                </a>
-              </li>
-
-              <li>
-                <a href="" id="linkedin">
-                  <LinkedIn />
-                </a>
-              </li>
+              {socialMedia.map((item, index) => {
+                return (
+                  <li key={index}>
+                    <a href={item.link} id={item.id} target="_blank">
+                      {item.icon}
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </Col>
 
