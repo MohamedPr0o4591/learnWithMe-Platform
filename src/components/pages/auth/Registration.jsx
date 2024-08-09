@@ -1,6 +1,6 @@
 import { CheckCircle, HighlightOff, Info } from "@mui/icons-material";
 import { Box, IconButton, Stack } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { auth, db } from "../../../config/firebase";
 
@@ -24,6 +24,11 @@ function Registration(props) {
   const [pass, setPass] = useState("");
   const [confPass, setConfPass] = useState("");
   const [userDate, setUserDate] = useState("");
+  const [emailType, setEmailType] = useState("gmail");
+
+  useEffect(() => {
+    setEmail(email.replace(/[^a-zA-Z0-9]/g, ""));
+  }, [email]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -48,7 +53,15 @@ function Registration(props) {
 
     if (flag) {
       try {
-        const signInMethods = await auth.fetchSignInMethodsForEmail(email);
+        const signInMethods = await auth.fetchSignInMethodsForEmail(
+          `${email}${
+            emailType === "gmail"
+              ? "@gmail.com"
+              : emailType === "hotmail"
+              ? "@hotmail.com"
+              : "@outlook.com"
+          }`
+        );
         if (signInMethods.length > 0) {
           alert("البريد الالكتروني مستخدم من قبل");
           setActive(false);
@@ -56,20 +69,35 @@ function Registration(props) {
         }
 
         const userCredential = await auth.createUserWithEmailAndPassword(
-          email,
+          `${email}${
+            emailType === "gmail"
+              ? "@gmail.com"
+              : emailType === "hotmail"
+              ? "@hotmail.com"
+              : "@outlook.com"
+          }`,
           pass
         );
 
-        await db.collection("users").doc(userCredential.user.uid).set({
-          email,
-          fullName,
-          role,
-          primaryRole,
-          classDetails,
-          scienceType,
-          scienceOption,
-          userDate,
-        });
+        await db
+          .collection("users")
+          .doc(userCredential.user.uid)
+          .set({
+            email: `${email}${
+              emailType === "gmail"
+                ? "@gmail.com"
+                : emailType === "hotmail"
+                ? "@hotmail.com"
+                : "@outlook.com"
+            }`,
+            fullName,
+            role,
+            primaryRole,
+            classDetails,
+            scienceType,
+            scienceOption,
+            userDate,
+          });
 
         await userCredential.user.sendEmailVerification();
 
@@ -207,15 +235,31 @@ function Registration(props) {
                   <option value="special">ذوي احتياجات خاصة</option>
                 </select>
               </div>
+
               <div className="input-box">
+                <div className="box-icon">
+                  <Info color="primary" fontSize="1rem" className="info-icon" />
+
+                  <p>التسجيل باستخدام حسابات الجيميل فقط</p>
+                </div>
+
                 <input
                   className="input-ltr"
-                  type="email"
+                  type="text"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
                 <span>البريد الالكتروني</span>
+
+                <select
+                  value={emailType}
+                  onChange={(e) => setEmailType(e.target.value)}
+                >
+                  <option value="gmail">@gmail.com</option>
+                  <option value="hotmail">@hotmail.com</option>
+                  <option value="outlook">@outlook.com</option>
+                </select>
               </div>
               <div className="input-box">
                 <input

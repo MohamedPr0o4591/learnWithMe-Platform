@@ -21,7 +21,7 @@ export const socialMedia = [
 
   {
     id: "insta",
-    link: "",
+    link: "https://www.instagram.com/Learn_WIth_Me_Educational/",
     icon: <Instagram />,
   },
 

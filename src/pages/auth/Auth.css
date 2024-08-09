@@ -88,8 +88,36 @@
 }
 
 .auth form .input-box {
-  margin-top: 20px;
   position: relative;
+  margin-top: 20px;
+}
+
+.auth form .box-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -20px;
+  z-index: 1;
+  display: inline-block;
+}
+
+.auth form .box-icon > p {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.228s ease;
+  background: #ccc;
+  border-radius: 5px;
+  color: #000;
+  padding: 10px 20px;
+  z-index: 1;
+  min-width: 200px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.auth form .box-icon .info-icon:hover ~ p {
+  opacity: 1;
 }
 
 .auth form input {
@@ -123,6 +151,28 @@
   background: #fff;
   padding: 0 5px;
   color: rgba(0, 0, 0, 0.45);
+}
+
+.auth form .input-box input ~ select {
+  position: absolute;
+  width: auto;
+  box-shadow: none;
+  pointer-events: none;
+  margin: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  direction: ltr;
+  transition: all 0.3s;
+  opacity: 0;
+  color: #000;
+  padding: 0;
+  font-size: 1rem;
+}
+
+.auth form .input-box input:valid ~ select {
+  opacity: 1;
+  pointer-events: all;
 }
 
 .auth form .label {
