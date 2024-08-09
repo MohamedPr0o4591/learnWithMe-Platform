@@ -77,7 +77,6 @@ function Registration(props) {
           "تم تسجيلك بنجاح. يرجى التحقق من بريدك الالكتروني لتفعيل الحساب قبل الدخول."
         );
 
-        props.setOpen(false);
         props.setRegisterMode("sign in");
       } catch (err) {
         console.error(err);
