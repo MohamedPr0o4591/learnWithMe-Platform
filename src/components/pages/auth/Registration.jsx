@@ -74,7 +74,7 @@ function Registration(props) {
         await userCredential.user.sendEmailVerification();
 
         alert(
-          "تم تسجيلك بنجاح. يرجى التحقق من بريدك الالكتروني للتحقق من عملية التسجيل."
+          "تم تسجيلك بنجاح. يرجى التحقق من بريدك الالكتروني لتفعيل الحساب قبل الدخول."
         );
 
         props.setOpen(false);
