@@ -186,6 +186,11 @@
   color: inherit;
 }
 
+.auth .item-disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
 @media (min-width: 320px) and (max-width: 767px) {
   .auth form .login-component {
     width: 100%;

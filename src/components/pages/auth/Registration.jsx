@@ -2,6 +2,7 @@ import { CheckCircle, HighlightOff, Info } from "@mui/icons-material";
 import { Box, IconButton, Stack } from "@mui/material";
 import React, { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import { auth, db } from "../../../config/firebase";
 
 var validateAr = /[\u0600-\u06FF]/;
 var validateEn = /[a-zA-Z]/;
@@ -11,11 +12,12 @@ var date = new Date();
 function Registration(props) {
   const [role, setRole] = useState("");
   const [primaryRole, setPrimaryRole] = useState("");
-  const [classDetails, setClassDetails] = useState("");
+  const [classDetails, setClassDetails] = useState([]);
   const [scienceType, setScienceType] = useState("");
   const [scienceOption, setScienceOption] = useState("");
 
   const [active, setActive] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
@@ -23,8 +25,10 @@ function Registration(props) {
   const [confPass, setConfPass] = useState("");
   const [userDate, setUserDate] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+
     setActive(true);
     let flag;
     let userD;
@@ -43,7 +47,44 @@ function Registration(props) {
     } else flag = false;
 
     if (flag) {
-      alert("تم التسجيل بنجاح!");
+      try {
+        const signInMethods = await auth.fetchSignInMethodsForEmail(email);
+        if (signInMethods.length > 0) {
+          alert("البريد الالكتروني مستخدم من قبل");
+          setActive(false);
+          return;
+        }
+
+        const userCredential = await auth.createUserWithEmailAndPassword(
+          email,
+          pass
+        );
+
+        await db.collection("users").doc(userCredential.user.uid).set({
+          email,
+          fullName,
+          role,
+          primaryRole,
+          classDetails,
+          scienceType,
+          scienceOption,
+          userDate,
+        });
+
+        await userCredential.user.sendEmailVerification();
+
+        alert(
+          "تم تسجيلك بنجاح. يرجى التحقق من بريدك الالكتروني للتحقق من عملية التسجيل."
+        );
+
+        props.setOpen(false);
+        props.setRegisterMode("sign in");
+      } catch (err) {
+        console.error(err);
+        alert("حدث خطأ أثناء عملية التسجيل: " + err.message);
+      } finally {
+        setLoading(false);
+      }
     } else {
       if (pass !== confPass) {
         alert("كلمة السر وتأكيد كلمة السر غير متطابقتين.");
@@ -155,6 +196,7 @@ function Registration(props) {
                   <label htmlFor="role">الدور</label>
                 </div>
                 <select
+                  required
                   name="role"
                   id="role"
                   value={role}
@@ -172,7 +214,6 @@ function Registration(props) {
                   className="input-ltr"
                   type="email"
                   required
-                  id="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
@@ -201,7 +242,12 @@ function Registration(props) {
                 <span>تأكيد كلمة المرور</span>
               </div>
               <div className="input-box">
-                <input type="submit" value="سجل الأن" id="submit" />
+                <input
+                  type="submit"
+                  value={`${loading ? "جاري التسجيل .." : "سجل الأن"}`}
+                  id="submit"
+                  className={`${loading ? "item-disabled" : ""}`}
+                />
               </div>
               <Stack direction={"row"} alignItems={"center"} gap={2} mt={2}>
                 <span>لديك حساب بالفعل؟</span>
@@ -235,6 +281,7 @@ function Registration(props) {
                       </div>
 
                       <select
+                        required
                         name="level"
                         id="level"
                         value={primaryRole}
@@ -253,7 +300,18 @@ function Registration(props) {
                           <label htmlFor="class">اختر الصف</label>
                         </div>
 
-                        <select name="class" id="class">
+                        <select
+                          required
+                          name="class"
+                          id="class"
+                          value={classDetails.primary}
+                          onChange={(e) =>
+                            setClassDetails({
+                              ...classDetails,
+                              primary: e.target.value,
+                            })
+                          }
+                        >
                           <option value="">اختر الصف</option>
                           <option value="1">الاول</option>
                           <option value="2">الثاني</option>
@@ -270,10 +328,16 @@ function Registration(props) {
                         </div>
 
                         <select
+                          required
                           name="class2"
                           id="class2"
-                          value={classDetails}
-                          onChange={(e) => setClassDetails(e.target.value)}
+                          value={classDetails.preparatory}
+                          onChange={(e) =>
+                            setClassDetails({
+                              ...classDetails,
+                              preparatory: e.target.value,
+                            })
+                          }
                         >
                           <option value="">اختر الصف</option>
                           <option value="1">الاول</option>
@@ -282,13 +346,14 @@ function Registration(props) {
                         </select>
                       </div>
                     ) : null}
-                    {primaryRole == 3 && classDetails !== "" && (
+                    {primaryRole == 3 && classDetails.preparatory !== "" && (
                       <div className="input-box">
                         <div className="label">
                           <label htmlFor="scienceDetails">نوع الثانوية</label>
                         </div>
 
                         <select
+                          required
                           name="scienceDetails"
                           id="scienceDetails"
                           value={scienceType}
@@ -302,16 +367,16 @@ function Registration(props) {
                         </select>
                       </div>
                     )}
-                    {(classDetails == 2 &&
+                    {(classDetails.preparatory == 2 &&
                       primaryRole == 3 &&
                       scienceType === "normal") ||
-                    (classDetails == 3 &&
+                    (classDetails.preparatory == 3 &&
                       primaryRole == 3 &&
                       scienceType === "normal") ||
-                    (classDetails == 2 &&
+                    (classDetails.preparatory == 2 &&
                       primaryRole == 3 &&
                       scienceType === "azhri") ||
-                    (classDetails == 3 &&
+                    (classDetails.preparatory == 3 &&
                       primaryRole == 3 &&
                       scienceType === "azhri") ? (
                       <div className="input-box">
@@ -320,6 +385,7 @@ function Registration(props) {
                         </div>
 
                         <select
+                          required
                           name="options"
                           id="options"
                           value={scienceOption}
@@ -332,7 +398,7 @@ function Registration(props) {
                       </div>
                     ) : null}
 
-                    {classDetails == 3 &&
+                    {classDetails.preparatory == 3 &&
                       primaryRole == 3 &&
                       scienceType === "normal" &&
                       scienceOption === "science" && (
@@ -341,7 +407,7 @@ function Registration(props) {
                             <label htmlFor="scienceType">نوع العلمى:</label>
                           </div>
 
-                          <select name="scienceType" id="scienceType">
+                          <select required name="scienceType" id="scienceType">
                             <option value="">اختر نوع العلمى</option>
                             <option value="sciences">علمى علوم</option>
                             <option value="maths">علمى رياضة</option>
@@ -359,7 +425,7 @@ function Registration(props) {
                         <label htmlFor="specialRole">التخصص:</label>
                       </div>
 
-                      <select name="specialRole" id="specialRole">
+                      <select required name="specialRole" id="specialRole">
                         <option value="">اختر التخصص</option>
                         <option value="programming">برمجة</option>
                         <option value="mathematics">رياضيات</option>
@@ -382,7 +448,7 @@ function Registration(props) {
                         <label htmlFor="specialType">نوع الإعاقة:</label>
                       </div>
 
-                      <select name="specialType" id="specialType">
+                      <select required name="specialType" id="specialType">
                         <option value="">اختر النوع</option>
                         <option value="visual">إعاقة بصرية</option>
                         <option value="audio">إعاقة سمعية</option>
