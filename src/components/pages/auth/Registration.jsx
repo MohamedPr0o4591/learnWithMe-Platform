@@ -81,8 +81,6 @@ function Registration(props) {
       } catch (err) {
         console.error(err);
         alert("حدث خطأ أثناء عملية التسجيل: " + err.message);
-      } finally {
-        setLoading(false);
       }
     } else {
       if (pass !== confPass) {
@@ -95,6 +93,7 @@ function Registration(props) {
     }
 
     setActive(false);
+    setLoading(false);
   };
 
   return (

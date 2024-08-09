@@ -39,9 +39,9 @@ function Login(props) {
       } else {
         alert("البريد الالكترونى او كلمة المرور غير صحيحة");
       }
-    } finally {
-      setLoading(false);
     }
+
+    setLoading(false);
   }
 
   async function handleForgotPassword() {
