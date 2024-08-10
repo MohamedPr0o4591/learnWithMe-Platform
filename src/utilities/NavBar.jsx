@@ -21,6 +21,10 @@ function NavBar() {
   const [slide, setSlide] = useState(false);
   const [registerMode, setRegisterMode] = useState("sign up");
 
+  function handleHomeClick() {
+    window.scrollTo(0, 0);
+  }
+
   return (
     <div className="nav">
       <Container maxWidth={"xl"} className="main-container">
@@ -58,7 +62,7 @@ function NavBar() {
             </li>
           </ul>
 
-          <Link to={"/"} className="logo">
+          <Link to={"/"} className="logo" onClick={handleHomeClick}>
             <h3>learn with me</h3>
             <img src={logo} alt="Logo" />
           </Link>
