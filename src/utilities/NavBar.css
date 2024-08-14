@@ -81,8 +81,8 @@
   color: #fff;
 }
 
-.nav a:hover::before,
-.nav a:hover::after {
+.nav ul a:hover::before,
+.nav ul a:hover::after {
   width: 100%;
 }
 

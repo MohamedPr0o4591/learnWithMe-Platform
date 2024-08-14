@@ -12,6 +12,8 @@ function Card(props) {
           backgroundPosition: `${props.bgPos}`,
         }}
       >
+        <j />
+
         <div className="content-box">
           <ul>
             <li>
@@ -28,8 +30,8 @@ function Card(props) {
           src={props.img}
           alt={props.imgTitle}
           style={{
-            width: `${props.imgWidth}`,
-            height: `${props.imgWidth}`,
+            // width: `${props.imgWidth}`,
+            // height: `${props.imgWidth}`,
             left: `${props.imgLeft}`,
           }}
         />

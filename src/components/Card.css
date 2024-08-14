@@ -4,10 +4,31 @@
   background: #ee0;
   width: 250px;
   border-radius: 20px;
-  transition: all 0.228s;
+  transition: all 0.6s;
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
+}
+
+.card-component:hover {
+  transform: rotateX(35deg);
+  transform-style: preserve-3d;
+  box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.1),
+    0 35px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.card-component j {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  transition: all 0.6s;
+}
+
+.card-component:hover j {
+  background: rgba(0, 0, 0, 0.65);
 }
 
 .card-component i {
@@ -19,7 +40,7 @@
 }
 
 .card-component img {
-  transition: all 0.6s ease-in-out;
+  transition: all 0.6s;
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -31,12 +52,14 @@
 }
 
 .card-component:hover img {
-  filter: drop-shadow(-4px 4px 6px black);
+  /* filter: drop-shadow(-4px 4px 6px black); */
   transform: scale(1.1);
   opacity: 1;
   bottom: 13px;
+
   border-radius: 20px;
-  backdrop-filter: blur(3px);
+  /* backdrop-filter: blur(3px); */
+  /* backdrop-filter: brightness(0.3); */
 }
 
 .card-component .content-box {
@@ -44,20 +67,17 @@
   bottom: 0;
   border-radius: 10px;
   width: 100%;
+  height: 100%;
   padding: 10px;
   color: #000;
-  z-index: -1;
-  overflow: hidden;
-  transition: all 0.5s ease;
-  opacity: 0;
-}
-.card-component:hover .content-box {
-  bottom: 0;
-  transition: all 0.6s ease-in-out;
-  transform: translateY(100%);
   z-index: 1;
-  background: #efef;
-  opacity: 1;
+  overflow: hidden;
+  transition: all 0.6s;
+  /* opacity: 0; */
+}
+
+.card-component:hover .content-box {
+  transform: translateY(40px) rotateX(-35deg);
 }
 
 .card-component .content-box h4 {
@@ -65,19 +85,27 @@
 }
 
 .card-component .content-box ul {
+  height: 100%;
   list-style: none;
   padding: 0;
+  padding-bottom: 10px;
   margin: 0;
   direction: ltr;
+  line-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
 }
 
 .card-component .content-box ul li {
   display: flex;
   justify-content: center;
+  color: beige;
+  text-shadow: 0 0rem 0.4rem black;
 }
 
 .card-component .content-box ul li strong {
-  color: #000;
+  color: burlywood;
 }
 
 .card-component ol {
@@ -88,32 +116,4 @@
   gap: 1rem;
   align-items: center;
   margin-top: 0.5rem;
-}
-
-.card-component ol #whatsapp,
-.card-component ol #fb,
-.card-component ol #telegram {
-  transition: all 0.3s;
-  color: #000;
-  padding: 7px;
-  border-radius: 50%;
-  border: 1px solid #000;
-}
-
-.card-component ol #whatsapp:hover,
-.card-component ol #fb:hover,
-.card-component ol #telegram:hover {
-  color: #fff;
-}
-
-.card-component ol #whatsapp:hover {
-  background: #25d366;
-}
-
-.card-component ol #fb:hover {
-  background: #3b5998;
-}
-
-.card-component ol #telegram:hover {
-  background: #0088cc;
 }
