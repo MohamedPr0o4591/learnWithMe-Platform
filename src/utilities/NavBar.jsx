@@ -103,19 +103,31 @@ function NavBar() {
         </Button>
         <ul>
           <li onClick={(_) => setSlide(false)}>
-            <a href="#platform">فكرة المنصة</a>
+            <a href="#platform">
+              <div className="circle" />
+              <span>فكرة المنصة</span>
+            </a>
           </li>
 
           <li onClick={(_) => setSlide(false)}>
-            <a href="#teachers">المدرسين</a>
+            <a href="#teachers">
+              <div className="circle" />
+              <span>المدرسين</span>
+            </a>
           </li>
 
           <li onClick={(_) => setSlide(false)}>
-            <a href="#features">مزايا المنصة</a>
+            <a href="#features">
+              <div className="circle" />
+              <span>مزايا المنصة</span>
+            </a>
           </li>
 
           <li onClick={(_) => setSlide(false)}>
-            <a href="#contact">تواصل معنا</a>
+            <a href="#contact">
+              <div className="circle" />
+              <span>تواصل معنا</span>
+            </a>
           </li>
         </ul>
       </Box>
