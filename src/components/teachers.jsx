@@ -32,7 +32,7 @@ export const teachersData = [
     img: mohamedMokhtar,
     imgCvr: mohamedMokhtarCvr,
     imgLeft: "-13px",
-    imgWidth: "100%",
+    imgWidth: "90%",
     cvrPos: "top",
   },
   {
@@ -41,7 +41,7 @@ export const teachersData = [
     img: tasniem,
     imgCvr: tasniemCvr,
     imgLeft: "-13px",
-    imgWidth: "100%",
+    imgWidth: "108%",
     cvrPos: "top",
   },
   {
@@ -50,7 +50,7 @@ export const teachersData = [
     img: shrouq,
     imgCvr: shrouqCvr,
     imgLeft: "14px",
-    imgWidth: "100%",
+    imgWidth: "90%",
     cvrPos: "center center",
   },
   {
@@ -59,7 +59,7 @@ export const teachersData = [
     img: basmala,
     imgCvr: basmalaCvr,
     imgLeft: "-13px",
-    imgWidth: "120%",
+    imgWidth: "109%",
     cvrPos: "center center",
   },
   {
@@ -77,7 +77,7 @@ export const teachersData = [
     img: basmalaMahmoud,
     imgCvr: basmalaMahmoudCvr,
     imgLeft: "13px",
-    imgWidth: "100%",
+    imgWidth: "90%",
     cvrPos: "center center",
   },
   {
