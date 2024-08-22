@@ -150,6 +150,10 @@
   display: none;
 }
 
+.nav .slide-menu-ul a span {
+  font-size: 1rem;
+}
+
 /* media queries */
 
 @media (min-width: 320px) and (max-width: 767px) {
@@ -174,7 +178,7 @@
   .nav .slide-menu {
     display: block;
     position: fixed;
-    top: 65.22px;
+    top: 85.22px;
     right: 0;
     height: 100vh;
     width: 90%;
@@ -207,7 +211,7 @@
     font-size: 1.5rem;
     font-weight: 500;
     color: #fff;
-    padding: 10px 20px;
+    padding: 0px 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   }
 
@@ -223,6 +227,10 @@
 @media (min-width: 767px) and (max-width: 1200px) {
   .nav .slide-menu {
     top: 125.22px;
+  }
+
+  .nav .slide-menu.tablet-screen {
+    top: 86.39px;
   }
 
   .nav .slide-menu ul {

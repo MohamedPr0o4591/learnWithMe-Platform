@@ -1,7 +1,7 @@
 import { HighlightOff } from "@mui/icons-material";
-import { Box, IconButton, Stack } from "@mui/material";
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Alert, Box, IconButton, Snackbar, Stack } from "@mui/material";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../../../config/firebase";
 
 function Login(props) {
@@ -10,6 +10,8 @@ function Login(props) {
   const [rememberMe, setRememberMe] = useState(false);
   const [loading, setLoading] = useState(false);
 
+  const navigate = useNavigate();
+
   async function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);
@@ -17,6 +19,7 @@ function Login(props) {
     try {
       const userCredential = await auth.signInWithEmailAndPassword(email, pass);
       const user = userCredential.user;
+      const idToken = await user.getIdToken();
 
       if (!user.emailVerified) {
         alert("يرجى التحقق من بريدك الإلكتروني لتفعيل الحساب.");
@@ -24,24 +27,28 @@ function Login(props) {
       }
 
       if (rememberMe) {
-        const user = userCredential.user;
-        const idToken = await user.getIdToken();
         localStorage.setItem("authToken", idToken);
+      } else {
+        sessionStorage.setItem("authToken", idToken);
       }
 
-      alert("تم تسجيل الدخول بنجاح");
+      navigate("/dashboard");
       props.setOpen(false);
     } catch (err) {
-      if (err.code === "auth/user-not-found") {
-        alert("البريد الالكتروني غير صحيح");
-      } else if (err.code === "auth/wrong-password") {
-        alert("كلمة المرور غير صحيحة");
-      } else {
-        alert("البريد الالكترونى او كلمة المرور غير صحيحة");
-      }
-    }
+      let errorMessage = "حدث خطأ أثناء تسجيل الدخول.";
 
-    setLoading(false);
+      if (err.code === "auth/user-not-found") {
+        errorMessage = "البريد الإلكتروني غير صحيح.";
+      } else if (err.code === "auth/wrong-password") {
+        errorMessage = "كلمة المرور غير صحيحة.";
+      } else {
+        errorMessage = "البريد الإلكتروني أو كلمة المرور غير صحيحة.";
+      }
+
+      alert(errorMessage);
+    } finally {
+      setLoading(false); // تأكد من إيقاف التحميل سواء تم النجاح أو الفشل
+    }
   }
 
   async function handleForgotPassword() {
@@ -99,13 +106,13 @@ function Login(props) {
         </div>
         <div className="additional-inputs">
           <div className="remember-forgot">
-            <label htmlFor="remember">خليك فاكرنى</label>
             <input
               type="checkbox"
               id="remember"
               checked={rememberMe}
               onChange={(e) => setRememberMe(e.target.checked)}
             />
+            <label htmlFor="remember">خليك فاكرنى</label>
           </div>
 
           <a href="#" onClick={handleForgotPassword}>

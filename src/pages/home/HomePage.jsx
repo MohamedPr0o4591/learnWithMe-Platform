@@ -6,7 +6,7 @@ import cover from "../../assets/home-cover.jpg";
 import AboutUs from "../../components/pages/home/AboutUs";
 import ContactComponent from "../../components/pages/home/contact/ContactComponent";
 
-function HomePage() {
+function HomePage(props) {
   const [nextBtn, setNextBtn] = useState("1");
   const [finishedTutorial, setFinishedTutorial] = useState(
     localStorage.tutorial

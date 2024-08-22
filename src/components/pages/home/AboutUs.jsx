@@ -102,10 +102,10 @@ function AboutUs() {
 
               <Row className="about-content-row">
                 <Col sx={12} lg={6}>
-                  <img src={item.img} alt="" />
+                  <p>{item.content}</p>
                 </Col>
                 <Col sx={12} lg={6}>
-                  <p>{item.content}</p>
+                  <img src={item.img} alt="" />
                 </Col>
               </Row>
             </Container>

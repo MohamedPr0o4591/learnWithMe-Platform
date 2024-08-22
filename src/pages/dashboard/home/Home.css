@@ -1,0 +1,32 @@
+.dashboard-home {
+  min-height: calc(100vh - 85.22px);
+  display: grid;
+  margin-top: 85.22px;
+  transition: all 0.3s ease;
+}
+
+.dashboard-home.active {
+  grid-template-columns: 1fr 5fr;
+}
+
+.dashboard-home.inactive {
+  grid-template-columns: 0.2fr 5fr;
+}
+
+.dashboard-home .sideBar {
+  background-color: #ddd;
+  border-left: 1px solid #ddd;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-home .content {
+  background-color: #fff;
+  padding: 20px 0;
+  direction: ltr;
+}
+
+@media (min-width: 320px) and (max-width: 1200px) {
+  .dashboard-home.inactive {
+    grid-template-columns: 1fr;
+  }
+}

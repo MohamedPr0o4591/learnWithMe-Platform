@@ -45,7 +45,7 @@
 
 .auth form .login-component .remember-forgot {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   align-items: center;
 }
 

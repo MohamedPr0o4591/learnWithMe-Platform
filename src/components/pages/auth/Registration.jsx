@@ -27,7 +27,7 @@ function Registration(props) {
   const [emailType, setEmailType] = useState("gmail");
 
   useEffect(() => {
-    setEmail(email.replace(/[^a-zA-Z0-9]/g, ""));
+    setEmail(email.replace(/[^a-zA-Z0-9._]/g, ""));
   }, [email]);
 
   const handleSubmit = async (e) => {
