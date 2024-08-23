@@ -27,6 +27,7 @@ import {
   Settings,
 } from "@mui/icons-material";
 import { naviOptions } from "../components/pages/dashboard/home/data";
+import ModeButton from "./mode button/ModeButton";
 
 function NavBar(props) {
   const [open, setOpen] = useState(false);
@@ -125,19 +126,23 @@ function NavBar(props) {
             </>
           )}
 
-          <Link
-            to={
-              localStorage.getItem("authToken") ||
-              sessionStorage.getItem("authToken")
-                ? "/dashboard"
-                : "/"
-            }
-            className="logo"
-            onClick={handleHomeClick}
-          >
-            <h3>learn with me</h3>
-            <img src={logo} alt="Logo" />
-          </Link>
+          <Stack direction={"row"} gap={2} alignItems={"center"}>
+            <ModeButton />
+
+            <Link
+              to={
+                localStorage.getItem("authToken") ||
+                sessionStorage.getItem("authToken")
+                  ? "/dashboard"
+                  : "/"
+              }
+              className="logo"
+              onClick={handleHomeClick}
+            >
+              <h3>learn with me</h3>
+              <img src={logo} alt="Logo" />
+            </Link>
+          </Stack>
         </Stack>
       </Container>
 
