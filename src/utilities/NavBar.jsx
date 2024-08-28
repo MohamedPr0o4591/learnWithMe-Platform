@@ -5,7 +5,6 @@ import {
   Avatar,
   Box,
   Button,
-  Container,
   Divider,
   IconButton,
   ListItemIcon,
@@ -22,12 +21,10 @@ import logo from "../../public/logo.png";
 import {
   CloseOutlined,
   Logout,
-  LogoutOutlined,
   MenuOutlined,
   Settings,
 } from "@mui/icons-material";
 import { naviOptions } from "../components/pages/dashboard/home/data";
-import ModeButton from "./mode button/ModeButton";
 
 function NavBar(props) {
   const [open, setOpen] = useState(false);
@@ -61,10 +58,10 @@ function NavBar(props) {
       className="nav"
       style={{
         backgroundColor: `${props.auth && `rgba(0, 0, 0, 0.5)`}`,
-        padding: `${props.auth && "10px 20px"}`,
+        padding: `${props.auth && `10px 20px`}`,
       }}
     >
-      <Container maxWidth={"xl"} className="main-container">
+      <div className="main-container w-100">
         <Stack
           direction={"row"}
           alignItems={"center"}
@@ -126,9 +123,7 @@ function NavBar(props) {
             </>
           )}
 
-          <Stack direction={"row"} gap={2} alignItems={"center"}>
-            <ModeButton />
-
+          <Stack direction={"row"} gap={8} alignItems={"center"}>
             <Link
               to={
                 localStorage.getItem("authToken") ||
@@ -144,7 +139,7 @@ function NavBar(props) {
             </Link>
           </Stack>
         </Stack>
-      </Container>
+      </div>
 
       {/* mobile screens */}
 
