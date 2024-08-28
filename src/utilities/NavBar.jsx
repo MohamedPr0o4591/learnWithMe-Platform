@@ -8,12 +8,13 @@ import {
   Divider,
   IconButton,
   ListItemIcon,
-  Menu,
   MenuItem,
   Modal,
+  Menu as MenuOption,
   Stack,
   Typography,
 } from "@mui/material";
+
 import { Link } from "react-router-dom";
 import Registration from "./../components/pages/auth/Registration";
 import Login from "../components/pages/auth/Login";
@@ -21,6 +22,7 @@ import logo from "../../public/logo.png";
 import {
   CloseOutlined,
   Logout,
+  Menu,
   MenuOutlined,
   Settings,
 } from "@mui/icons-material";
@@ -71,6 +73,18 @@ function NavBar(props) {
           {props.auth ? (
             <>
               <Stack alignItems={"center"} direction={"row"} gap={2}>
+                <div className="iconClosing">
+                  <IconButton
+                    color="inherit"
+                    sx={{
+                      borderRadius: "5px",
+                    }}
+                    onClick={() => props.setOpenSideBar(!props.openSideBar)}
+                  >
+                    <Menu fontSize="medium" color="inherit" />
+                  </IconButton>
+                </div>
+
                 <IconButton
                   color="inherit"
                   onClick={(e) => setMenuAnchorEl(e.currentTarget)}
@@ -267,7 +281,7 @@ function NavBar(props) {
         </div>
       </Modal>
 
-      <Menu
+      <MenuOption
         anchorEl={menuAnchorEl}
         id="account-menu"
         open={menuOpen}
@@ -322,7 +336,7 @@ function NavBar(props) {
           </ListItemIcon>
           Logout
         </MenuItem>
-      </Menu>
+      </MenuOption>
     </div>
   );
 }

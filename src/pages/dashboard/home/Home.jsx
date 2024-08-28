@@ -3,12 +3,15 @@ import "./Home.css";
 import { Outlet } from "react-router";
 import SideBar from "../../../components/pages/dashboard/home/SideBar";
 
-function Home() {
-  const [openSideBar, setOpenSideBar] = useState(false);
-
+function Home(props) {
   return (
-    <div className={`dashboard-home ${openSideBar ? "active" : "inactive"}`}>
-      <SideBar setOpenSideBar={setOpenSideBar} openSideBar={openSideBar} />
+    <div
+      className={`dashboard-home ${props.openSideBar ? "active" : "inactive"}`}
+    >
+      <SideBar
+        setOpenSideBar={props.setOpenSideBar}
+        openSideBar={props.openSideBar}
+      />
 
       <div className="content">
         <Outlet />

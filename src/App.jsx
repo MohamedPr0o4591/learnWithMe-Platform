@@ -12,6 +12,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [userData, setUserData] = useState(null);
   const [auth, setAuth] = useState(undefined);
+  const [openSideBar, setOpenSideBar] = useState(false);
 
   useEffect(() => {
     const auth = getAuth();
@@ -33,6 +34,10 @@ function App() {
       const localToken = localStorage.getItem("authToken");
       const sessionToken = sessionStorage.getItem("authToken");
       const userAuth = localToken || sessionToken;
+
+      if (location.pathname === "/dashboard" && !userAuth) {
+        navigate("/");
+      }
 
       user
         .getIdTokenResult()
@@ -79,7 +84,12 @@ function App() {
   return (
     <div className="App">
       {/* <div className="blurBall" /> */}
-      <NavBar auth={auth} userData={userData} />
+      <NavBar
+        auth={auth}
+        userData={userData}
+        setOpenSideBar={setOpenSideBar}
+        openSideBar={openSideBar}
+      />
       <Routes>
         <Route index element={<HomePage auth={auth} />} />
         <Route
@@ -91,7 +101,12 @@ function App() {
           }
         />
 
-        <Route path="/dashboard" element={<Home />}>
+        <Route
+          path="/dashboard"
+          element={
+            <Home setOpenSideBar={setOpenSideBar} openSideBar={openSideBar} />
+          }
+        >
           <Route index element={<h2>Hello Home</h2>} />
           <Route
             path="student_timetable"
